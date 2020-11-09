@@ -7,7 +7,7 @@ body,#root{
   height: 100vh;
   margin: 0;
 }
-body,input, select, textarea{
+body,input, select, textarea,button{
   font-size: 1.6rem;
   font-family: Helvetica,  Arial, sans-serif;
 }
@@ -18,6 +18,10 @@ body,input, select, textarea{
   grid-template-rows: 5rem 1fr;
   grid-template-columns: 1fr;
   height: 100%;
+}
+a{
+  color:#ccc;
+  text-decoration: none;
 }
 a:hover{
   color: #ff8000;
@@ -46,4 +50,72 @@ footer{
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+/* content */
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.main{
+  flex: 3 60rem;
+}
+.sidebar{
+  flex: 1 20rem;
+}
+
+
+/* products */
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 ;
+  margin: 0;
+  list-style: none;
+}
+.products li{
+  flex:0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+ 
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img{
+  max-width: 37rem;
+  max-height: 37rem;
+}
+
+.product-price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-price div,
+.product-price button{
+  text-align: center;
+  flex: 1;
+}
+.product-price div{
+  font-size: 2rem;
+}
+
+.btn{
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.btn:hover{
+  border: 0.1rem #444141 solid; 
+}
+.btn.primary{
+  background-color: #f0c040;
 }

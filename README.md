@@ -2,13 +2,17 @@
 
 # step One : create react app and make main contant and style its
 
-1.header
-2.main
-3.footer
+1. header
+1. main
+1. footer
 
-# list of task
+> list of task
 
 ## create product Component
+* create products data.json
+* import its to App.js
+* make html strc
+* create component folder
 
 ## create filter Component
 
@@ -35,3 +39,9 @@
 ## Add Admin Section
 
 ## Publish on Heroku
+
+| Name     | Email          |
+| -------- | -------------- |
+| John Doe | john@gmail.com |
+| Jane Doe | jane@gmail.com |
+

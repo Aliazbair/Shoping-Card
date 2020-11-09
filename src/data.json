@@ -1,0 +1,52 @@
+{
+    "products":[
+        {
+            "id":"1",
+            "title":"product one",
+            "image":"/images/product-1.jpg",
+            "description":"about the products",
+            "price":90,
+            "availableSizes":["xl","xxl"]
+        },
+        {
+            "id":"2",
+            "title":"product tow",
+            "image":"/images/product-8.jpg",
+            "description":"about the products",
+            "price":40,
+            "availableSizes":["xl","xxl"]
+        },
+        {
+            "id":"3",
+            "title":"product three",
+            "image":"/images/product-3.jpg",
+            "description":"about the products",
+            "price":80,
+            "availableSizes":["xl","xxl"]
+        },
+        {
+            "id":"4",
+            "title":"product four",
+            "image":"/images/product-4.jpg",
+            "description":"about the products",
+            "price":50,
+            "availableSizes":["xl","xxl"]
+        },
+        {
+            "id":"5",
+            "title":"product five",
+            "image":"/images/product-5.jpg",
+            "description":"about the products",
+            "price":200,
+            "availableSizes":["xl","xxl"]
+        },
+        {
+            "id":"6",
+            "title":"product sex",
+            "image":"/images/product-7.jpg",
+            "description":"about the products",
+            "price":200,
+            "availableSizes":["xl","xxl"]
+        }
+    ]
+}
