@@ -98,3 +98,21 @@ sortProducts = (e) => {
   }))
 }
 ```
+
+# create Card Component
+
+1. Create branch cart-component
+1. products.js
+1. handle "Add To Cart" to this.props.addToCart(product)
+1. app.js
+1. add cartItems to state as []
+1. Create addToCart(product)
+1. Slice, Check product existance, add to catitems
+1. Cart.js
+1. define cartitems, order form this.props
+1. check cartitem.lenght and show message
+1. list cartitem{cartitems.lenght > 0 && (})}
+1. index.css
+1. style cart , cart-header, cart-item ( img,li)
+1. use localsotroge on app constructor to load cart items (Josn.parse)
+1. use localstorage on addToCart to save cart items

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Cart from './components/cart'
 import Filter from './components/filter'
 import Products from './components/products'
 import data from './data.json'
@@ -9,33 +10,61 @@ class App extends Component {
 
     this.state = {
       products: data.products,
+      cartItems: [],
       size: '',
       sort: '',
     }
   }
+
+  // add to cart method
+  addToCart = (product) => {
+    // init cartitems array
+    const cartItems = this.state.cartItems.slice() // clone arr
+    let alreadyIncart = false
+    // loop through items carts
+    cartItems.forEach((item) => {
+      // check the product exist
+      if (item.id === product.id) {
+        // incerment the count
+        item.count++
+        alreadyIncart = true
+      }
+    })
+
+    // if not exsit in cart add its
+    if (!alreadyIncart) {
+      cartItems.push({ ...product, count: 1 })
+    }
+    this.setState({ cartItems })
+  }
+
+  // removeFromCart method
+  removeFromCart = (product) => {
+    const cartItems = this.state.cartItems.slice()
+    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) })
+  }
+
   //  sortproducts method
   sortProducts = (e) => {
     const sort = e.target.value
-    this.setState(
-      (state)=>({
-        sort: sort,
-        products: this.state.products
-          .slice()
-          .sort((a, b) =>
-            sort === 'lowset'
-              ? a.price > b.price
-                ? 1
-                : -1
-              : sort === 'hightes'
-              ? a.price < b.price
-                ? 1
-                : -1
-              : a.id < b.id
+    this.setState((state) => ({
+      sort: sort,
+      products: this.state.products
+        .slice()
+        .sort((a, b) =>
+          sort === 'lowset'
+            ? a.price > b.price
               ? 1
               : -1
-          ),
-      })
-    )
+            : sort === 'hightes'
+            ? a.price < b.price
+              ? 1
+              : -1
+            : a.id < b.id
+            ? 1
+            : -1
+        ),
+    }))
   }
 
   //  filterproducts method
@@ -43,7 +72,6 @@ class App extends Component {
     // check the value
     if (e.target.value === '') {
       this.setState({ size: e.target.value, product: data.products })
-   
     } else {
       this.setState({
         size: e.target.value,
@@ -71,9 +99,17 @@ class App extends Component {
                   filterProducts={this.filterProducts}
                   sortProducts={this.sortProducts}
                 />
-                <Products products={this.state.products} />
+                <Products
+                  products={this.state.products}
+                  addToCart={this.addToCart}
+                />
               </div>
-              <div className='sidebar'>card items</div>
+              <div className='sidebar'>
+                <Cart
+                  cartItems={this.state.cartItems}
+                  removeFromCart={this.removeFromCart}
+                />
+              </div>
             </div>
           </main>
           <footer>All right is reserved.</footer>
