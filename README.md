@@ -72,6 +72,61 @@ filterProducts = (e) => {
 }
 ```
 
+# create Card Component
+
+1. Create branch cart-component
+1. products.js
+1. handle "Add To Cart" to this.props.addToCart(product)
+1. app.js
+1. add cartItems to state as []
+1. Create addToCart(product)
+1. Slice, Check product existance, add to catitems
+1. Cart.js
+1. define cartitems, order form this.props
+1. check cartitem.lenght and show message
+1. list cartitem{cartitems.lenght > 0 && (})}
+1. index.css
+1. style cart , cart-header, cart-item ( img,li)
+1. use localsotroge on app constructor to load cart items (Josn.parse)
+1. use localstorage on addToCart to save cart items
+
+## add to card method
+
+```js
+// add to cart method
+addToCart = (product) => {
+  // init cartitems array
+  const cartItems = this.state.cartItems.slice() // clone arr
+  let alreadyIncart = false
+  // loop through items carts
+  cartItems.forEach((item) => {
+    // check the product exist
+    if (item.id === product.id) {
+      // incerment the count
+      item.count++
+      alreadyIncart = true
+    }
+  })
+
+  // if not exsit in cart add its
+  if (!alreadyIncart) {
+    cartItems.push({ ...product, count: 1 })
+  }
+  this.setState({ cartItems })
+}
+```
+
+## remove cart method
+
+````js
+// removeFromCart method
+  removeFromCart = (product) => {
+    const cartItems = this.state.cartItems.slice()
+    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) })
+  }
+
+
+
 ## sort method
 
 ```js
@@ -97,22 +152,23 @@ sortProducts = (e) => {
       ),
   }))
 }
+````
+
+## filter method
+
+```js
+//  filterproducts method
+filterProducts = (e) => {
+  // check the value
+  if (e.target.value === '') {
+    this.setState({ size: e.target.value, product: data.products })
+  } else {
+    this.setState({
+      size: e.target.value,
+      products: data.products.filter(
+        (product) => product.availableSizes.indexOf(e.target.value) >= 0
+      ),
+    })
+  }
+}
 ```
-
-# create Card Component
-
-1. Create branch cart-component
-1. products.js
-1. handle "Add To Cart" to this.props.addToCart(product)
-1. app.js
-1. add cartItems to state as []
-1. Create addToCart(product)
-1. Slice, Check product existance, add to catitems
-1. Cart.js
-1. define cartitems, order form this.props
-1. check cartitem.lenght and show message
-1. list cartitem{cartitems.lenght > 0 && (})}
-1. index.css
-1. style cart , cart-header, cart-item ( img,li)
-1. use localsotroge on app constructor to load cart items (Josn.parse)
-1. use localstorage on addToCart to save cart items
