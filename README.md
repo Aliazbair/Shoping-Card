@@ -116,3 +116,23 @@ sortProducts = (e) => {
 1. style cart , cart-header, cart-item ( img,li)
 1. use localsotroge on app constructor to load cart items (Josn.parse)
 1. use localstorage on addToCart to save cart items
+
+# create Add checkout form Component
+
+## Check form
+
+1.create branch chechout-form
+
+1. Cart.js
+   1.make cart items presisten
+1. use localstorage on app constructor to load cart items
+1. use localstroge on addTocart to save cart items
+   1.handle click on process
+1. update showCheckout state to ture on click
+1. conditional rendering checkout form
+1. get email, name and address required input
+1. define handleInput function
+1. add checkout button
+1. handle onSubmit form event by this.createOrder
+1. create order object and pass to parent to handle it
+1. publish changes

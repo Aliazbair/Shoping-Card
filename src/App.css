@@ -172,6 +172,26 @@ footer {
   align-items: center;
   width: 100%;
 }
-.total > div, button{
+.total > div, button
+
+{
   flex:1
+}
+
+
+/* checkOut form */
+form{width: 100%;}
+.form-container{
+  width:100%;
+  padding: 0;
+  list-style: none;
+}
+.form-container li{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+input{
+  padding: 1rem;
+  border: .1rem solid #888383 ;
 }
