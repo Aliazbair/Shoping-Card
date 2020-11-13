@@ -136,3 +136,22 @@ sortProducts = (e) => {
 1. handle onSubmit form event by this.createOrder
 1. create order object and pass to parent to handle it
 1. publish changes
+
+## Add modal and animation
+
+1.create branch animation-modal
+
+1. show Animation
+1. create fade effect from bottom for products
+1. create fade left for add to cart
+1. create fade right for show checkout form
+1. open modal by click on produc image
+1. install react-modal
+   1.product.js
+   1.import modal
+1. set state for product to null
+1. define openModal and closemodal
+   1.show modal if product exist
+1. create modal
+1. create zoom effect for modal
+   1.index.js
