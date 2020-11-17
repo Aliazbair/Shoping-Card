@@ -155,3 +155,35 @@ sortProducts = (e) => {
 1. create modal
 1. create zoom effect for modal
    1.index.js
+
+
+# Add Redux
+
+1. create branch add-redux
+1. npm insatll redux react-redux
+1. import redux
+1.set initial state
+1.create types
+1. types.js
+1. define FEATC_PRODUCTS
+1. actions/productAction.js
+1. declare feactProducts
+1. create reducers
+1. reducers/ProductsReducers.hs
+1. define case FETCH_PRODUCTS
+1.Create Store
+1. import productReducer
+1. combine reducers
+1. use store
+1. app.js
+1. import store
+1.wrap all in provider
+1. connect products
+1. import fetchProducts
+1. set state products to null
+1. fetch products on did mount
+1. package.json
+1. set proxy to http://localhost:4000
+1. npm run serever
+1.check products list
+
